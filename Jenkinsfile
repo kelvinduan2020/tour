@@ -19,7 +19,10 @@ pipeline {
             echo 'I am unstable :/'
         }
         failure {
-            echo 'I failed :('
+            #echo 'I failed :('
+            mail to: 'kelvin_duan@epam.com'.
+                 subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
+                 body: "Something is wrong with ${env.BUILD_URL}"
         }
         changed {
             echo 'Things were different before...'
