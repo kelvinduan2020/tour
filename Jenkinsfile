@@ -4,13 +4,13 @@ pipeline {
         stage('No-op') {
             steps {
                 sh 'ls'
-                exit 1
             }
         }
     }
     post {
         always {
             echo 'One way or another, I have finished'
+            echo "Failed Pipeline: ${currentBuild.fullDisplayName} and Something is wrong with ${env.BUILD_URL}"
             deleteDir() /* clean up our workspace */
         }
         success {
