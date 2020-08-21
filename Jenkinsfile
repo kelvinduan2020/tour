@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment {
-        WHO_IS_AUTHOR = 'Kelvin'
+        created_by = 'Kelvin'
     }
     
     stages {
@@ -28,7 +28,7 @@ pipeline {
         
         stage('Test') {
             steps {
-                echo 'author is $(WHO_IS_AUTHOR)'
+                echo 'author is ${created_by}'
             }
         }
     }
