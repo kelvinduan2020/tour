@@ -28,7 +28,7 @@ pipeline {
         
         stage('Test') {
             steps {
-                echo 'author is ${created_by}'
+                echo "author is ${created_by}"
             }
         }
     }
