@@ -1,5 +1,10 @@
 pipeline {
     agent any
+    
+    environment {
+        WHO_IS_AUTHOR = 'Kelvin'
+    }
+    
     stages {
         stage('Build') {
             steps {
@@ -23,7 +28,7 @@ pipeline {
         
         stage('Test') {
             steps {
-                sh 'echo "Fail!"; exit 1'
+                sh 'echo author is $(WHO_IS_AUTHOR)'
             }
         }
     }
