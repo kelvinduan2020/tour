@@ -20,7 +20,7 @@ pipeline {
             steps {
                 timeout(time: 3, unit: 'MINUTES') {
                     retry(5) {
-                        sh 'echo "author is $(WHO_IS_AUTHOR)"'
+                        sh 'echo "deploying"'
                     }
                 }
             }
@@ -28,7 +28,7 @@ pipeline {
         
         stage('Test') {
             steps {
-                sh 'echo "test is fine"'
+                echo "author is $(WHO_IS_AUTHOR)"
             }
         }
     }
