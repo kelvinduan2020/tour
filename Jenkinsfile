@@ -20,7 +20,7 @@ pipeline {
             steps {
                 timeout(time: 3, unit: 'MINUTES') {
                     retry(5) {
-                        sh './flakey-deploy.sh'
+                        sh 'echo author is $(WHO_IS_AUTHOR)'
                     }
                 }
             }
@@ -28,7 +28,7 @@ pipeline {
         
         stage('Test') {
             steps {
-                sh 'echo author is $(WHO_IS_AUTHOR)'
+                sh 'echo "test is fine"'
             }
         }
     }
