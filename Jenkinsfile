@@ -20,7 +20,7 @@ pipeline {
             steps {
                 timeout(time: 3, unit: 'MINUTES') {
                     retry(5) {
-                        echo "author is $(WHO_IS_AUTHOR)"
+                        sh 'echo "author is $(WHO_IS_AUTHOR)"'
                     }
                 }
             }
